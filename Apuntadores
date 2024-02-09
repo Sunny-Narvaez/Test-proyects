@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+// Función para tomar datos
+void tomarDatos(int *dias) {
+    printf("\nIngrese la cantidad de días: ");
+    scanf("%d", dias);
+}
+
+// Función para procesar los datos y convertirlos en días, horas y segundos
+void procesarDatos(int dias, int *horas, int *minutos, int *segundos) {
+    *horas = dias * 24;
+    *minutos = *horas * 60;
+    *segundos = *minutos * 60;
+}
+
+// Función para imprimir los datos
+void imprimirDatos(const int *dias, const int *horas, const int *minutos, const int *segundos) {
+    printf("Días: %d\n", *dias);
+    printf("Horas: %d\n", *horas);
+    printf("Minutos: %d\n", *minutos);
+    printf("Segundos: %d\n", *segundos);
+}
+
+int main() {
+    int dias, horas, minutos, segundos;
+    //Caratula
+    printf("Sunny Narvaez Guerrero\n++++++++++++++++++++++++++++++");
+
+    // Tomar datos
+    tomarDatos(&dias);
+
+    // Procesar datos
+    procesarDatos(dias, &horas, &minutos, &segundos);
+
+    // Imprimir datos
+    imprimirDatos(&dias, &horas, &minutos, &segundos);
+
+    return 0;
+}
